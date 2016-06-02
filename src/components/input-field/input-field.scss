@@ -1,0 +1,81 @@
+$label-shift: -0.4em;
+$anim-duration: 0.25s;
+
+.input-field {
+	position: relative;
+	width: 80%;
+
+	.input-display, .text-field, .input-label {
+		position: relative;
+		font-size: 0.8rem;
+		font-family: 'Arial';
+	}
+
+	.input-display, .text-field {
+		width: 100%;
+		padding: 0.5em;
+		margin: 0;
+		border: 1px solid #CCC;
+	}
+
+	.input-label {
+		position: absolute;
+		top: -0.9em;
+		right: 0;
+		opacity: 0;
+		-webkit-transition: 0.25s ease-in-out;
+		-moz-transition: 0.25s ease-in-out;
+		-o-transition: 0.25s ease-in-out;
+		transition: 0.25s ease-in-out;
+	}
+	
+	.text-field, .input-confirm {
+		display: none;
+	}
+
+	&:hover {
+		.input-label {
+			-webkit-transform: translate( 0, $label-shift );
+			-moz-transform: translate( 0, $label-shift );
+			-o-transform: translate( 0, $label-shift );
+			-ms-transform: translate( 0, $label-shift );
+			transform: translate( 0, $label-shift );
+			opacity: 1.0;
+		}
+
+		.input-display {
+			color: red;
+			background-color: white;
+			border: 1px solid black;
+		}
+	}
+
+	&.edit {
+		.input-label {
+			-webkit-transform: translate( 0, $label-shift );
+			-moz-transform: translate( 0, $label-shift );
+			-o-transform: translate( 0, $label-shift );
+			-ms-transform: translate( 0, $label-shift );
+			transform: translate( 0, $label-shift );
+			opacity: 1.0;
+		}
+
+		.input-display {
+			display: none;
+		}
+
+		.text-field {
+			display: block;
+		}
+
+		.input-confirm {
+			display: block;
+			position: absolute;
+			top: 0;
+			right: -1.3em;
+			height: 100%;
+			width: 50px;
+			border: none;
+		}
+	}
+}
