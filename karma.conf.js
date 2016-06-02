@@ -6,14 +6,14 @@ module.exports = function (config) {
 		singleRun: true,
 		frameworks: [ 'mocha' ],
 		files: [
-			'test/tests.webpack.js' //just load this file
+			'test/tests.webpack.js'
 		],
 		preprocessors: {
-			'test/tests.webpack.js': [ 'webpack', 'sourcemap' ] //preprocess with webpack and our sourcemap loader
+			'test/tests.webpack.js': [ 'webpack', 'sourcemap' ]
 		},
 		reporters: [ 'dots' ],
 		webpack: {
-			devtool: 'inline-source-map', //just do inline source maps instead of the default
+			devtool: 'inline-source-map',
 			module: {
 				loaders: [
 					{ test: /\.js$/, loader: 'babel-loader' }
@@ -21,7 +21,7 @@ module.exports = function (config) {
 			}
 		},
 		webpackServer: {
-			noInfo: true //please don't spam the console when running in karma!
+			noInfo: true
 		}
 	});
 };
